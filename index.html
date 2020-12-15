@@ -1,0 +1,25 @@
+<center>
+<script src="https://rtcmulticonnection.herokuapp.com/dist/RTCMultiConnection.min.js"></script>
+<script src="https://rtcmulticonnection.herokuapp.com/socket.io/socket.io.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.0/css/halfmoon-variables.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
+<script src="/script.js"></script>
+<link href="/style.css" rel="stylesheet" />
+
+<script>
+var connection = new RTCMultiConnection();
+
+// set this to own server in the future
+connection.socketURL = 'https://rtcmulticonnection.herokuapp.com:443/';
+
+// if you want audio+video conferencing
+connection.session = {
+    audio: true
+};
+
+connection.openOrJoin(room);
+</script>
+<body onload="halfmoon.toggleDarkMode()">
+<p id="join"></p>
+</center>
